@@ -12,29 +12,29 @@ import android.view.ViewGroup;
 import com.example.pupil.shabanova.R;
 import com.example.pupil.shabanova.ui.base.BaseFragment;
 
-public class TifanyFragment extends BaseFragment {
+public class BlueFragment extends BaseFragment {
 
-    private TifanyViewModel mViewModel;
+    private BlueViewModel mViewModel;
 
-    public static TifanyFragment newInstance() {
-        return new TifanyFragment();
+    public static BlueFragment newInstance() {
+        return new BlueFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.tifany_fragment, container, false);
+        return inflater.inflate(R.layout.blue_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(TifanyViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(BlueViewModel.class);
         // TODO: Use the ViewModel
     }
 
     @Override
     public String getName() {
-        return "Tifany";
+        return "Blue";
     }
 }

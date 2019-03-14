@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pupil.shabanova.R;
+import com.example.pupil.shabanova.ui.base.BaseFragment;
 
-public class RoseFragment extends Fragment {
+public class RoseFragment extends BaseFragment {
 
     private RoseViewModel mViewModel;
 
@@ -32,4 +33,8 @@ public class RoseFragment extends Fragment {
         // TODO: Use the ViewModel
     }
 
+    @Override
+    public String getName() {
+        return "Rose";
+    }
 }
