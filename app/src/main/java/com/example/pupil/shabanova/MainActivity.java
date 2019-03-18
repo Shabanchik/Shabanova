@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import com.example.pupil.shabanova.ui.adapters.MyFragmentPagerAgapters;
 import com.example.pupil.shabanova.ui.base.BaseFragment;
@@ -46,7 +47,45 @@ public class MainActivity extends AppCompatActivity {
         MyFragmentPagerAgapters adapter= new MyFragmentPagerAgapters(getSupportFragmentManager());
         adapter.setList(fragments);
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
         tl.setupWithViewPager(viewPager);
+        tl.addOnTabSelectedListener((new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition()==2){
+                    Toast.makeText(getBaseContext(),"Тифаниии"+tab.getPosition(),Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                if (tab.getPosition()==2){
+                    Toast.makeText(getBaseContext(),"Тифаниии"+tab.getPosition(),Toast.LENGTH_LONG).show();
+                }
+
+            }
+        }));
 
        // FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
        // fragmentTransaction.replace(R.id.container,mainFragment);
